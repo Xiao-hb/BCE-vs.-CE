@@ -15,6 +15,11 @@
 <br />
 
 ## Experiments using Swin Transformer on CIFAR10
+![Distribution of decision scores and biases for Swin Transformers with varying initial mean on CIFAR10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/Swin_cifar10_bias_mean.png)
+<br />
+
+![Distribution of decision scores and biases for Swin Transformers with varying weight decay on CIFAR10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/Swin_cifar10_bias_weight_decay.png)
+<br />
 
 ## Experiments using Swin Transformer on CIFAR100
 
