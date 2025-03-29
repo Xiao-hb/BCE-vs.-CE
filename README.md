@@ -26,3 +26,7 @@
 
 ## Visualization using t-SNE
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_CIFAR10.gif)
+
+### Display for specific training epochs
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=12](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch12.png)
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=13](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch13.png)
