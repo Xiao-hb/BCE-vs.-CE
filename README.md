@@ -14,9 +14,9 @@
 ![Distribution of decision scores and biases for ViTs with varying weight decay on CIFAR100](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ViT_cifar100_bias_weight_decay.png)
 <br />
 
-## Experiments using Swin-Transformer on CIFAR10
+## Experiments using Swin Transformer on CIFAR10
 
-## Experiments using Swin-Transformer on CIFAR100
+## Experiments using Swin Transformer on CIFAR100
 
 
 ## Visualization using t-SNE
