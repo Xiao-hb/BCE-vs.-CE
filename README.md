@@ -22,7 +22,11 @@
 <br />
 
 ## 4. Experiments using Swin Transformer on CIFAR100
+![Distribution of decision scores and biases for Swin Transformers with varying initial mean on CIFAR10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/Swin_cifar100_bias_mean.png)
+<br />
 
+![Distribution of decision scores and biases for Swin Transformers with varying weight decay on CIFAR10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/Swin_cifar100_bias_weight_decay.png)
+<br />
 
 ## 5. Visualization using t-SNE
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_CIFAR10.gif)
