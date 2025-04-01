@@ -32,5 +32,11 @@
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_CIFAR10.gif)
 
 ### 5.1. Display for specific training epochs
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=6](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch6.png)
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=7](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch7.png)
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=8](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch8.png)
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=9](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch9.png)
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch10.png)
+![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=11](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch11.png)
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=12](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch12.png)
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=13](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch13.png)
