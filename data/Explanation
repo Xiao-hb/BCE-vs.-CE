@@ -1,0 +1,1 @@
+After executing 'datasets.py', the dataset (including MNIST, CIFAR10 and CIFAR100) will be downloaded to this folder and used for subsequent model training and processing.
