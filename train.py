@@ -5,8 +5,6 @@ import torch
 
 import models
 from models.resnet import resnet18, resnet50
-from models.res_adapt import ResNet18_adapt
-from models.cct_src.cct import cct_7_3x1_32, cct_7_3x1_32_c100
 from models import vit, swin
 from utils import *
 from args import parse_train_args
@@ -27,12 +25,8 @@ def loss_compute(args, model, criterion, outputs, targets):
     if args.sep_decay:
         # Find features and weights
         features = outputs[1]
-        if 'cct' in args.model.lower():
-            w = model.classifier.fc.weight
-            b = model.classifier.fc.bias
-        else:
-            w = model.fc.weight
-            b = model.fc.bias
+        w = model.fc.weight
+        b = model.fc.bias
         lamb_weight = args.weight_decay / 2
         lamb_bias = args.weight_decay_bias / 2
         lamb_feature = args.feature_decay_rate / 2
@@ -88,19 +82,12 @@ def trainer(args, model, trainloader, epoch_id, criterion, optimizer, scheduler,
             print_and_save('[time: %s] | [epoch: %d] (%d/%d) | Loss: %.4f | top1: %.4f | top5: %.4f ' %
                            (time_now.strftime("%Y-%m-%d_%H-%M-%S"), epoch_id + 1, batch_idx + 1, len(trainloader), losses.avg, top1.avg, top5.avg), logfile)
 
-            # 获取最后一层
-            # last_layer = list(model.children())[-1]     # 只适用于模型最后一层是全连接层，不包括其他自定义模块等
-            if 'cct' in args.model.lower():
-                last_layer = model.classifier.fc
-            else:
-                last_layer = model.fc
-            # 检查最后一层是否包含 bias 参数，并输出 bias 值
+            last_layer = model.fc
             if hasattr(last_layer, 'bias') and last_layer.bias is not None:
                 print("Bias of the last layer:", last_layer.bias.data)
             else:
                 print("The last layer does not have a bias term.")
 
-    #if args.decay_type == 'cosine':
     scheduler.step(epoch = epoch_id)
 
 def tester(args, model, testloader, epoch_id, logfile, best_top1):
@@ -238,28 +225,14 @@ def main():
         model = resnet18(num_classes=num_classes, bias_init_mode=args.bias_init_mode, bias_init_mean=args.bias_init_mean).to(device)
     elif args.model == "ResNet50":
         model = resnet50(num_classes=num_classes, bias_init_mode=args.bias_init_mode, bias_init_mean=args.bias_init_mean).to(device)
-    elif args.model == "ResNet18_adapt":
-        model = ResNet18_adapt(width = args.width, num_classes=num_classes, fc_bias=args.bias).to(device)
     elif args.model == 'densenet121':
         model = models.densenet121(num_classes = num_classes, bias_init_mode = args.bias_init_mode, bias_init_mean = args.bias_init_mean).to(device)
-    elif args.model == 'CCT_10':
-        print('Using CCT for cifar10 or mnist! ')
-        model = cct_7_3x1_32(pretrained=False, progress=True, bias_init_mode=args.bias_init_mode,
-                             bias_init_mean=args.bias_init_mean).to(device)
-    elif args.model == 'CCT_100':
-        print('Using CCT for cifar100! ')
-        model = cct_7_3x1_32_c100(pretrained=False, progress=True, bias_init_mode=args.bias_init_mode,
-                                  bias_init_mean=args.bias_init_mean).to(device)
     elif args.model == 'ViT':
         print('Using ViT! ')
-        # model = vit.ViT(image_size=args.img_size, patch_size=args.patch_size, dim=args.head_dim,
-        #                 num_classes=num_classes,
-        #                 bias_init_mode=args.bias_init_mode, bias_init_mean=args.bias_init_mean,
-        #                 depth=6, heads=8, mlp_dim=512, dropout=0.1, emb_dropout=0.1).to(device)   # for CIFAR-10, and '--head_dim 512'
         model = vit.ViT(image_size=args.img_size, patch_size=args.patch_size, dim=args.head_dim,
                         num_classes=num_classes,
                         bias_init_mode=args.bias_init_mode, bias_init_mean=args.bias_init_mean,
-                        depth=6, heads=10, mlp_dim=512, dropout=0.2, emb_dropout=0.1).to(device)     # for CIFAR-100, and '--head_dim 256'
+                        depth=6, heads=10, mlp_dim=512, dropout=0.2, emb_dropout=0.1).to(device)
     elif args.model == 'Swin':
         print('Using Swin-Transformer! ')
         model = swin.swin_t(window_size=args.patch_size, downscaling_factors=(2, 2, 2, 1),
