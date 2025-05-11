@@ -163,30 +163,6 @@ def train(args, model, trainloader, testloader, epoch_save_step = 1):
 def main():
     args = parse_train_args()
 
-    if args.SOTA:
-        args.bias_init_mode = 0
-        if args.loss.lower() == 'ce' or args.loss.lower() == 'crossentropy':
-            args.bias_init_mean = 0
-        elif args.loss.lower() == 'bce':
-            args.bias_init_mean = 6
-        else:
-            raise NotImplementedError
-
-        args.sep_decay = False
-        if args.optimizer.lower() == 'sgd':
-            args.lr = 0.01
-            args.weight_decay = 0.0005
-            args.decay_type = 'step'
-        elif args.optimizer.lower() == 'adamw':
-            args.lr = 0.001
-            args.weight_decay = 0.05
-            args.decay_type = 'cosine'
-        else:
-            raise NotImplementedError
-        if args.MIX:
-            if args.smoothing == 0.0:
-                args.smoothing = 0.1
-
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     if args.SOTA:
         save_path = ('./model_weights/' + args.model + '_' + args.dataset + '_' + args.loss + '_' + args.optimizer + '_' + args.decay_type +
