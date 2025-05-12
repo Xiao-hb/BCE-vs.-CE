@@ -36,13 +36,25 @@ The directory should be look like:
 # Training and Testing
 ## Training with SGD
 ```
-$ python train.py --gpu_id 0 --uid <saving directory name> --dataset <mnist or cifar10> --optimizer SGD --batch_size 256 --lr 0.05
+$ python train.py --gpu_id 0 --model <ResNet18 or DenseNet121 or ViT> --dataset <mnist or cifar10 or cifar100> --optimizer SGD --loss <CE or BCE> --batch_size 128 --lr 0.01
 ```
 
 ## Training with AdamW
-``` ```
+```
+$ python train.py --gpu_id 0 --model <ResNet18 or DenseNet121 or ViT> --dataset <mnist or cifar10 or cifar100> --optimizer AdamW --loss <CE or BCE> --batch_size 128 --lr 0.01
+```
 
-# Results
+**Note**: For each epoch during training, the model checkpoints will be saved in the directory `./model_weights/` for evaluating NC metrics, feature properties, and other operations.
+
+We use training options `--bias_init_mode` and `--bias_init_mean` to control the initialization of the classifier bias (implemented by reconstructing the `self.fc` layer, see `./models/linear.py` for details).
+
+There are many other training options, e.g., `--epochs`, `--epoch_save_step`, `--weight_decay` and so on, can be found in `args.py`.
+
+At the end of each epoch iteration, an evaluation will be performed on the test set, so there is **no** explicit execution of a command like `test.py`.
+
+# Additional Results
+**Note**: We only present the additional experimental results on `ViT` here; for results regarding the `ResNet` or `DenseNet` in terms of Neural Collapse, model convergence accuracy, and other aspects, please refer to [our paper]().
+
 ## 1. Experiments using ViT on CIFAR10
 ![Distribution of decision scores and biases for ViTs with varying initial mean on CIFAR10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ViT_cifar10_bias_mean.png)
 <br />
