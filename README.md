@@ -1,4 +1,5 @@
-# BCE vs. CE in Deep Feature Learning
+# [ICML 2025] BCE vs. CE in Deep Feature Learning
+~~~~
 
 ## 1. Experiments using ViT on CIFAR10
 ![Distribution of decision scores and biases for ViTs with varying initial mean on CIFAR10](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ViT_cifar10_bias_mean.png)
