@@ -34,6 +34,13 @@ The directory should be look like:
 ```
 
 # Training and Testing
+## Training with SGD
+```
+$ python train.py --gpu_id 0 --uid <saving directory name> --dataset <mnist or cifar10> --optimizer SGD --batch_size 256 --lr 0.05
+```
+
+## Training with AdamW
+``` ```
 
 # Results
 ## 1. Experiments using ViT on CIFAR10
@@ -77,4 +84,9 @@ The directory should be look like:
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=12](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch12.png)
 ![Visualize the features learned by ResNet18 on CIFAR-10 using t-SNE, epoch=13](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/ResNet18_cifar10_epoch13.png)
 
-# Citation
+# Citation and Reference
+For technical details and full experimental results, please check [our paper]().
+
+```
+Citation
+```
