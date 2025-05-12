@@ -14,13 +14,24 @@ Forty-Second International Conference on Machine Learning \(ICML\), 2025.
 
 # Getting Started
 ## Requirements
-* CUDA
-* Python
-* torch
-* torchvision
-* numpy
+* CUDA == 12.4
+* python == 3.8.20
+* torch == 2.4.0
+* torchvision == 0.19.0
+* scipy == 1.10.1
+* numpy == 1.24.3
 
 ## Preparing Datasets
+By default, the main code assumes the datasets for MNIST, CIFAR10 and CIFAR100 are stored under `./data/`. If the datasets are not there, they will be automatically downloaded from `torchvision.datasets`. User may change this default location of datasets in `args.py` through the argument `--data_dir`.
+
+The directory should be look like: 
+```
+./data
+├── cifar-10-batches-py
+├── cifar-100-python
+├── MNIST
+    └── raw
+```
 
 # Training and Testing
 
