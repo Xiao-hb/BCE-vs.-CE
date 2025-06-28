@@ -4,7 +4,7 @@ This is the **main code** for the paper "[BCE vs. CE in Deep Feature Learning](h
 
 Forty-Second International Conference on Machine Learning \(ICML\), 2025.
 
-🎬 None | 💻 None | 🔥 [Poster]().
+🎬 None | 💻 None | 🔥 [Poster](https://github.com/Xiao-hb/BCE-vs.-CE/blob/main/Figs/BCE%20vs.%20CE.PNG).
 
 # Overview
 * We provide the first theoretical proof that BCE can also lead to the NC, i.e., maximizing the compactness and distinctiveness.
