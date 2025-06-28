@@ -1,6 +1,6 @@
 # ![Logo image](https://github.com/user-attachments/assets/26a93348-5bed-4107-9113-0dfe6ee707e8) \[ICML 2025\] BCE vs. CE in Deep Feature Learning
 
-This is the **main code** for the paper "[BCE vs. CE in Deep Feature Learning]()".
+This is the **main code** for the paper "[BCE vs. CE in Deep Feature Learning](https://icml.cc/virtual/2025/poster/44778)".
 
 Forty-Second International Conference on Machine Learning \(ICML\), 2025.
 
