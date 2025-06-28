@@ -111,8 +111,14 @@ We present some additional results here: based on ResNet18, we visualize the cha
 </div>
 
 # Citation and Reference
-For technical details and full experimental results, please check [our paper]().
+For technical details and full experimental results, please check [our paper](https://openreview.net/forum?id=aoLFIUlyPE).
 
 ```
-Citation
+@inproceedings{li2025bce,
+title={{BCE} vs. {CE} in Deep Feature Learning},
+author={Qiufu Li and Huibin Xiao and Linlin Shen},
+booktitle={Forty-second International Conference on Machine Learning},
+year={2025},
+url={https://openreview.net/forum?id=aoLFIUlyPE}
+}
 ```
