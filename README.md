@@ -53,7 +53,7 @@ There are many other training options, e.g., `--epochs`, `--epoch_save_step`, `-
 At the end of each epoch iteration, an evaluation will be performed on the test set, so there is **no** explicit execution of a command like `test.py`.
 
 # Additional Results
-**Note**: We only present the additional experimental results on `ViT` here; for results regarding the `ResNet` or `DenseNet` in terms of Neural Collapse, model convergence accuracy, and other aspects, please refer to [our paper]().
+**Note**: We only present the additional experimental results on `ViT` here; for results regarding the `ResNet` or `DenseNet` in terms of Neural Collapse, model convergence accuracy, and other aspects, please refer to [our paper](https://arxiv.org/abs/2505.05813).
 
 ## 1. Experiments using ViT on CIFAR10
 
